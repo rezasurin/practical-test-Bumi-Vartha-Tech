@@ -1,0 +1,16 @@
+*** Desain arsitektur dan diagram konsep microservices ***
+
+Salah satu database yang digunakan untuk arsitektur microservices adalah MongoDB.
+Maka, pada desain aplikasi ini, database yang digunakan adalah MongoDB.
+
+Pada sisi Back-End (server),  bahasa pemrograman yang digunakan adalah JavaScript dengan framework Node JS dan Express JS.
+Masing-masing service, yaitu Users dan Katalog, akan memiliki middlewares untuk proses autentikasi dan autorisasi meggunakan JSONWebToken.
+Lalu, services akan di tampung menggunakan Docker untuk memudahkan dalam proses deployment server.
+
+Pada sisi Front-End (client), framework yang digunakan adalah React JS. Untuk mendapatkan data dari server, client dapat menggunakan
+packages tambahan 'axios' atau packages bawaan Node.JS 'fetch'. Ketika proses autentikasi berhasil, user akan mendapatkan akses token
+yang diperoleh dari server dan kemudian akan di simpan pada localstorage browser. 
+Untuk meningkatkan performa aplikasi, client dapat menggunakan Redis
+untuk mengakses data yang ingin didapatkan berulang kali (caching).
+
+
